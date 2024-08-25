@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root {
+    --main-bg-color: rgb(214, 214, 214);
+    --side-bg-color: white;
+    --side-bg-color2: rgb(194, 194, 194);
+    --text-color: #333333;
+    --accent-color: #ff6f61;
+    --card-color: #dadada;
+    --id-card-title-bg-color: rgb(235, 66, 66);
+    --id-card-title-color: rgb(0, 0, 0);
+    --id-card-title-color-shadow: rgb(85, 85, 85);
+    --id-card-title-boxshadow: rgb(179, 41, 41);
+    --footer-bg-color: rgb(187, 236, 243);
+    --plane-body: white;
+    --plane-secondary: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Share Tech Mono', monospace;
+    background: var(--main-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 5px 1fr;
+    grid-template-rows: 0.5fr 3fr 1fr;
+    height: 100vh;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+    border-bottom: 5px solid var(--text-color);
+}
+
+.hero-text {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    width: 60%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--side-bg-color);
+    position: relative;
+    border: 5px solid var(--text-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.hero-text h1, .hero-text h2, .hero-text p {
+    color: var(--text-color);
+}
+
+.hero-text h1 {
+    font-size: 34px;
+}
+
+.hero-text h2 {
+    font-size: 30px;
+}
+
+.hero-text p {
+    font-size: 27px;
+}
+
+.hero-button {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+    width: 60%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-button button {
+    background-color: var(--side-bg-color);
+    border: 3px solid var(--text-color);
+    width: 100%;
+    height: 80%;
+    color: var(--text-color);
+    font-size: 30px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+.hero-button button:hover {
+    transform: scale(1.05);
+    animation: bounce 0.5s ease-in-out infinite alternate;
+    background-color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+.navbar {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    width: 100%;
+    height: 100%;
+    background-color: var(--side-bg-color);
+    border: 2px solid var(--text-color);
+}
+
+.dog img {
+    display: block;
+}
+
+.dog {
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+    position: relative;
+    transition: transform 0.3s ease;
+    align-self: flex-end;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1000;
+}
+
+.navlink a{
+    color: var(--text-color);
+    font-size: 40px;
+    transition: background-color 0.3s ease;
+}
+
+.navlink a:hover {
+    color: rgb(158, 158, 158);
+    border: 1px solid var(--text-color);
+    box-shadow: inset 0px 0px 1px var(--text-color);
+    background-color: rgb(216, 216, 216);
+    font-size: 40px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#projects {
+    background-color: var(--side-bg-color);
+    width: 100%;
+    height: 150vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 200px 1.5fr 1fr 1fr 1fr 1fr;
+    border-bottom: 1px solid var(--text-color);
+}
+
+.cards {
+    grid-column: 1 / 4;
+    grid-row: 2 / 4;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    width: 30%; 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+.dog-watching {
+    grid-column: 1 / 2;
+    grid-row: 4 / 7;
+    align-self: flex-end;
+    justify-self: center;
+    height: 100%;
+    width: 100%;
+}
+
+.dog-watching img {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    color: black;
+}
+
+.picture {
+    width: 90%;
+    height: 86%;
+}
+
+.picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: 1px solid black;
+}
+
+.picture:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.project-tile {
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.project-tile a {
+    transition: text-shadow 0.2s ease;
+    text-decoration: none;
+}
+
+.project-tile a:hover {
+    color: rgb(26, 26, 26);
+    text-shadow: 0px 0px 5px var(--text-color);
+    cursor: pointer;
+}
+
+.second {
+    grid-column: 2 / 3;
+    grid-row: 5/6;
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+    height: auto;
+    padding: 50px;
+}
+
+.text-second {
+    color: var(--text-color);
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+
+.personal-info {
+    width: 100%;
+    height: 110vh;
+    background-color: var(--side-bg-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.personal-info div, .personal-info p {
+    color: var(--text-color);
+}
+
+.dog-showing {
+    align-self: flex-end;
+    justify-self: flex-end;
+    z-index: 9;
+    grid-column: 1 / 4;
+    grid-row: 1 / 4;
+    height: 90%;
+    width: 90%;
+}
+
+.dog-showing img {
+    width: 100%;
+    height: 100%;
+    transform: scaleX(-1);
+}
+
+
+.id-card {
+    width: 95%;
+    height: 500px;
+    background-color: var(--card-color);
+    align-self: center;
+    justify-self: center;
+    z-index: 11;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 60px 1fr 1fr 1fr 1fr;
+    border-radius: 10px;
+    border: 1px solid black;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.personal-info .id-card .id-card_title {
+    color: var(--id-card-title-color);
+}
+
+.id-card_title {
+    grid-column: 1 / 3;
+    text-align: center;
+    font-size: 50px;
+    background-color: var(--id-card-title-bg-color);
+    text-shadow: 3px 3px 0px var(--id-card-title-color-shadow);
+    box-shadow: inset 10px 10px 12px var(--id-card-title-boxshadow);
+    border-radius: 10px 10px 0px 0px;
+}
+
+.id-card-photo {
+    grid-column: 1 / 2;
+    grid-row: 2 / 6;                                                                                                                                                   
+}
+
+.id-card-infos {
+    display: grid;
+    grid-column: 2 / 3;
+    grid-row: 2 / 6;
+    padding: 20px;
+}
+
+.id-card-photo img{
+    width: 100%;
+    padding: 20px;
+    align-self: flex-end;
+}
+
+.certification-text {
+    background-color: yellow;
+    width: 100%;
+    align-self: flex-end;
+    text-align: center;
+}
+
+.id-card-infos p, .id-card-infos div{
+    font-size: 34px;
+    color: var(--id-card-title-color);
+    text-align: center;
+}
+
+.signature {
+    background-color: var(--card-color);
+}
+
+.signature img {
+    width: 100%;
+}
+
+.third {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    align-self: center;
+    justify-self: center;
+    z-index: 10;
+    height: auto;
+    padding: 50px;
+}
+
+.footer {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--footer-bg-color);
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
+}
+
+.fourth {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    align-self: center;
+    justify-self: center;
+    height: auto;
+    padding: 20px;
+}
+
+.dog-leaving {
+    grid-column: 1 / 2;
+    grid-row: 2 / 6;
+    width: 100%;
+    height: 100%;
+}
+
+.dog-leaving img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+.plane {
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 100px 100px 0;
+}
+
+.first-plane {
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+    width: 50%;
+    height: auto;
+    background-image: url(plane.png);
+    background-size: contain;
+    justify-self: center;
+}
+
+.second-plane {
+    grid-column: 2 / 3;
+    grid-row: 4 / 6;
+    width: 50%;
+    height: auto;
+    background-image: url(plane.png);
+    background-size: contain;
+    justify-self: center;
+}
+
+.plane a {
+    font-size: 40px;
+    background-color: var(--card-color);
+}
+
+.plane a:hover {
+    font-size: 40px;
+    background-color: var(--id-card-title-color);
+    color: var(--footer-bg-color);
+}
+
